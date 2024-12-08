@@ -22,7 +22,7 @@ def generate_recipe():
     response = rag_model.generate_content(prompt)
 
     return {
-        "response": response.text
+        "recipe": str(response.text).strip()
     }
 
 @app.route('/calorie-intake', methods=['POST'])
