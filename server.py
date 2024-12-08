@@ -1,6 +1,7 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from vertexai.preview import rag
 from vertexai.generative_models import GenerativeModel, Tool
+import calorie_intake.calorie_intake as ci
 
 PROJECT_ID = 'bangkit-capstone-hans-ai'
 REGION = 'us-central1'
@@ -60,3 +61,27 @@ def generate():
     return {
         "response": response.text
     }
+
+@app.route('/calorie-intake', methods=['POST'])
+def predict_calorie_intake():
+    try:
+        data = request.get_json()
+
+        result = ci.full_prediction_pipeline(
+            age=int(data.get("age")),
+            gender=data.get("gender"),
+            daily_calories_consumed=float(data.get("dailyCaloriesConsumed")),
+            weight_change_in_lbs=float(data.get("weightChangeInLbs")),
+            duration_in_weeks=float(data.get("durationInWeeks")),
+            physical_activity_level=data.get("physicalActivityLevel"),
+            sleep_quality=data.get("sleepQuality"),
+            stress_level=int(data.get("stressLevel")),
+            current_weight_in_lbs=float(data.get("currentWeightInLbs")),
+            caloric_adjustment=float(data.get("caloricAdjustment"))
+        )
+
+        return jsonify({
+            "prediction": result
+        }), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
