@@ -85,6 +85,86 @@
 					"body": "{\n    \"prediction\": 2358.926513671875\n}"
 				}
 			]
+		},
+		{
+			"name": "Generate Recipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mealType\": \"snack\",\n    \"calories\": 300,\n    \"ingredients\": [\"chicken\", \"sugar\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/recipe",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"recipe"
+					]
+				},
+				"description": "# Request Body\n\n| **Key** | **Value** |\n| --- | --- |\n| mealType | enum, \"breakfast\" / \"lunch\" / \"dinner\" / \"snack\" |\n| calories | float |\n| ingredients | string\\[\\] |\n\n# Response Body\n\n| **Key** | **Value** |\n| --- | --- |\n| recipe | string |"
+			},
+			"response": [
+				{
+					"name": "Generate Recipe",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mealType\": \"snack\",\n    \"calories\": 300,\n    \"ingredients\": [\"chicken\", \"sugar\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/recipe",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"recipe"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.6"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 08 Dec 2024 09:26:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"recipe\": \"I am sorry, but I cannot create a 300-calorie chicken snack recipe that includes sugar from the provided text.  The sources contain many chicken recipes, but none include sugar and specify calorie counts.  To create such a recipe would require information beyond what is given.\"\n}"
+				}
+			]
 		}
 	],
 	"event": [
