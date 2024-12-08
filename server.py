@@ -1,5 +1,3 @@
-import vertexai
-
 from flask import Flask, request
 from vertexai.preview import rag
 from vertexai.generative_models import GenerativeModel, Tool
@@ -8,7 +6,7 @@ PROJECT_ID = 'bangkit-capstone-hans-ai'
 REGION = 'us-central1'
 DISPLAY_NAME = "test_corpus"
 PATHS = [
-    "https://drive.google.com/file/d/1_kjUrFo7ysxFfGA1gBuGkSQ-kX7mYYgv/view?usp=sharing"
+    "https://drive.google.com/file/d/1_KguMbb4AeeCPqJD16MAf6l8vUy1KhPL/view?usp=sharing"
 ]
 MODEL_NAME = "gemini-1.5-flash-002"
 
