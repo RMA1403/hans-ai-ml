@@ -1,0 +1,119 @@
+{
+	"info": {
+		"_postman_id": "c06b09ef-1654-4099-9d36-79cbce1aa516",
+		"name": "ML BE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31883857"
+	},
+	"item": [
+		{
+			"name": "Predict Calorie Intake",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"age\": 20,\n    \"gender\": \"F\",\n    \"dailyCaloriesConsumed\": 1700,\n    \"weightChangeInLbs\": 5.0,\n    \"durationInWeeks\": 10,\n    \"physicalActivityLevel\": \"Sedentary\",\n    \"sleepQuality\": \"Excellent\",\n    \"stressLevel\": 3,\n    \"currentWeightInLbs\": 101,\n    \"caloricAdjustment\": 250\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/calorie-intake",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"calorie-intake"
+					]
+				},
+				"description": "# Request Body\n\n| **Key** | **Value** |\n| --- | --- |\n| age | int |\n| gender | enum, \"F\" / \"M\" |\n| dailyCaloriesConsumed | float |\n| weightChangeInLbs | float |\n| durationInWeeks | float |\n| physicalActivityLevel | enum, \"Active\" / \"Moderately Active\" / \"Sedentary\" / \"Very Active\" |\n| sleepQuality | enum, \"Poor\" / \"Fair\" / \"Good\" / \"Excellent\" |\n| stressLevel | int, 1-10 |\n| currentWeightInLbs | float |\n| caloricAdjustment | float |\n\n# Response Body\n\n| **Key** | **Value** |\n| --- | --- |\n| prediction | float |"
+			},
+			"response": [
+				{
+					"name": "Predict Calorie Intake",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"age\": 20,\n    \"gender\": \"F\",\n    \"dailyCaloriesConsumed\": 1700,\n    \"weightChangeInLbs\": 5.0,\n    \"durationInWeeks\": 10,\n    \"physicalActivityLevel\": \"Sedentary\",\n    \"sleepQuality\": \"Excellent\",\n    \"stressLevel\": 3,\n    \"currentWeightInLbs\": 101,\n    \"caloricAdjustment\": 250\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/calorie-intake",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"calorie-intake"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.11.6"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 08 Dec 2024 06:51:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"prediction\": 2358.926513671875\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
