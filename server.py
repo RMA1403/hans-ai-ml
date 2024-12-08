@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 import calorie_intake.calorie_intake as ci
 from recipes.rag import rag_model
+from recipes.prompt import generate_prompt
 
 app = Flask(__name__)
 
@@ -8,9 +9,16 @@ app = Flask(__name__)
 def hello_world():
     return 'Hello, World'
 
-@app.route('/generate')
-def generate():
-    prompt = request.args.get("prompt")
+@app.route('/recipe', methods=['POST'])
+def generate_recipe():
+    data = request.get_json()
+
+    meal_type = data.get("mealType")
+    calorie = data.get("calories")
+    ingredients = data.get("ingredients")
+
+    prompt = generate_prompt(meal_type, calorie, ingredients)
+
     response = rag_model.generate_content(prompt)
 
     return {
