@@ -93,7 +93,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"mealType\": \"snack\",\n    \"calories\": 300,\n    \"ingredients\": [\"chicken\", \"sugar\"]\n}",
+					"raw": "{\n    \"calories\": 300,\n    \"ingredients\": [\"ayam\", \"tepung\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -109,7 +109,7 @@
 						"recipe"
 					]
 				},
-				"description": "# Request Body\n\n| **Key** | **Value** |\n| --- | --- |\n| mealType | enum, \"breakfast\" / \"lunch\" / \"dinner\" / \"snack\" |\n| calories | float |\n| ingredients | string\\[\\] |\n\n# Response Body\n\n| **Key** | **Value** |\n| --- | --- |\n| recipe | string |"
+				"description": "# Request Body\n\n| **Key** | **Value** |\n| --- | --- |\n| calories | float |\n| ingredients | string\\[\\] |\n\n# Response Body\n\n| **Key** | **Value** |\n| --- | --- |\n| recipe | string |"
 			},
 			"response": [
 				{
@@ -119,7 +119,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"mealType\": \"snack\",\n    \"calories\": 300,\n    \"ingredients\": [\"chicken\", \"sugar\"]\n}",
+							"raw": "{\n    \"calories\": 300,\n    \"ingredients\": [\"ayam\", \"tepung\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -146,7 +146,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Sun, 08 Dec 2024 09:26:06 GMT"
+							"value": "Sun, 08 Dec 2024 15:52:19 GMT"
 						},
 						{
 							"key": "Content-Type",
@@ -154,7 +154,7 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "291"
+							"value": "719"
 						},
 						{
 							"key": "Connection",
@@ -162,7 +162,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"recipe\": \"I am sorry, but I cannot create a 300-calorie chicken snack recipe that includes sugar from the provided text.  The sources contain many chicken recipes, but none include sugar and specify calorie counts.  To create such a recipe would require information beyond what is given.\"\n}"
+					"body": "{\n    \"recipe\": \"Resep Ayam Tepung:\\n\\nBahan-bahan: 1 kg ayam, 500 gram tepung terigu, royco secukupnya, 6 siung bawang putih, 1 sendok teh lada bubuk, 1 ruas jahe, 1 ruas kunyit, garam secukupnya, minyak goreng, 2 putih telur.\\n\\nLangkah-langkah:\\n\\n1. Bersihkan ayam, potong menjadi 14 bagian.\\n2. Haluskan bawang putih, jahe, kunyit. Campur dengan ayam dan garam, diamkan 30 menit (bisa ditambahkan air segelas dan direbus sebentar).\\n3. Campur terigu dan royco untuk tepung kering.\\n4. Campur 4 sendok tepung terigu dengan 100 ml air dan 2 putih telur kocok lepas untuk adonan celupan.\\n5. Panaskan minyak goreng. Celup ayam ke tepung kering, lalu ke adonan basah, kemudian ke tepung kering lagi. Goreng hingga matang.\"\n}"
 				}
 			]
 		}

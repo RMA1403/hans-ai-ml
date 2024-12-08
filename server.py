@@ -11,19 +11,21 @@ def hello_world():
 
 @app.route('/recipe', methods=['POST'])
 def generate_recipe():
-    data = request.get_json()
+    try:
+        data = request.get_json()
 
-    meal_type = data.get("mealType")
-    calorie = data.get("calories")
-    ingredients = data.get("ingredients")
+        calorie = data.get("calories")
+        ingredients = data.get("ingredients")
 
-    prompt = generate_prompt(meal_type, calorie, ingredients)
+        prompt = generate_prompt(calorie, ingredients)
 
-    response = rag_model.generate_content(prompt)
+        response = rag_model.generate_content(prompt)
 
-    return {
-        "recipe": str(response.text).strip()
-    }
+        return jsonify({
+            "recipe": str(response.text).strip()
+        }), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
 
 @app.route('/calorie-intake', methods=['POST'])
 def predict_calorie_intake():

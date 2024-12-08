@@ -34,7 +34,7 @@ rag_retrieval_tool = Tool.from_retrieval(
                     rag_corpus=rag_corpus.name
                 )
             ],
-            similarity_top_k=10,
+            similarity_top_k=1,
             vector_distance_threshold=0.8
         )
     )
