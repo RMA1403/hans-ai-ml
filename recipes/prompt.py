@@ -14,11 +14,11 @@ def generate_prompt(
     ## JUDUL ###
     {Judul Makanan}
     ## KARBOHIDRAT ##
-    {Karbohidrat}
+    {Karbohidrat} gram
     ## PROTEIN ##
-    {Protein}
+    {Protein} gram
     ## LEMAK ##
-    {Lemak}
+    {Lemak} gram
     ## BAHAN ##
     {Bahan dipisahkan per baris}
     ## LANGKAH ##

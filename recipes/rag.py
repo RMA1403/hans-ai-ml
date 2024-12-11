@@ -22,7 +22,7 @@ rag_corpus = rag.create_corpus(
 rag.import_files(
     rag_corpus.name,
     PATHS,
-    chunk_size=512,
+    chunk_size=1024,
     chunk_overlap=100,
     max_embedding_requests_per_min=900,
 )
@@ -35,7 +35,7 @@ rag_retrieval_tool = Tool.from_retrieval(
                     rag_corpus=rag_corpus.name
                 )
             ],
-            similarity_top_k=1,
+            similarity_top_k=20,
             vector_distance_threshold=0.8
         )
     )
