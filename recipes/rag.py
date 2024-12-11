@@ -5,7 +5,8 @@ PROJECT_ID = 'bangkit-capstone-hans-ai'
 REGION = 'us-central1'
 DISPLAY_NAME = "test_corpus"
 PATHS = [
-    "https://drive.google.com/file/d/1_KguMbb4AeeCPqJD16MAf6l8vUy1KhPL/view?usp=sharing"
+    # "https://drive.google.com/file/d/1_KguMbb4AeeCPqJD16MAf6l8vUy1KhPL/view?usp=sharing",
+  "https://drive.google.com/file/d/1KdYFrmtquZvM1ELDgdgSAjqM_To6lzFe/view?usp=sharing"
 ]
 MODEL_NAME = "gemini-1.5-flash-002"
 

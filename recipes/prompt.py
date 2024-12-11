@@ -7,10 +7,23 @@ def generate_prompt(
     ingredients_joined = ", ".join(ingredients)
 
     # TODO: Involve calories in the prompt
-    prompt = f"""
-    Berikan 1 resep yang terdiri dari (namun tidak terbatas pada) bahan-bahan berikut: {ingredients_joined}.
+    prompt = '''Berikan saya satu resep beserta langkah-langkahnya yang dapat dibuat dari bahan-bahan berikut. Bisa saja terdapat beberapa bahan tambahan yang tidak tercantum dalam daftar bahan.
+    {INGREDIENTS}
 
-    Tuliskan bahan-bahan yang dibutuhkan beserta langkah-langkah pembuatannya.
-    """
+    Berikan dalam format
+    ## JUDUL ###
+    {Judul Makanan}
+    ## KARBOHIDRAT ##
+    {Karbohidrat}
+    ## PROTEIN ##
+    {Protein}
+    ## LEMAK ##
+    {Lemak}
+    ## BAHAN ##
+    {Bahan dipisahkan per baris}
+    ## LANGKAH ##
+    {Langkah-langkah dipisahkan per baris}
+    '''
+    prompt = prompt.replace("{INGREDIENTS}", ingredients_joined)
 
     return prompt
